@@ -15,7 +15,7 @@ puts "created #{User.count} users."
 print "Creating animals..."
 Animal.destroy_all
 
-a1 = Animal.create!(breed: "pomerian", description: "The adage that calls dogs 'man's best friend' has some truth to it. After all, dogs are among the earliest pets that mankind had domesticated way before recorded history. In their honor and your furry life-style, below are some quotes about rescue dogs, and a dog quote collection in general.", image_url: "https://media.kidadl.com/600f84f2f7068970979d68aa-close-to-65-of-animal-abuse-cases-are-dogs.jpeg", age: "2year", sex: "female", species: "dog", adopter_id: u5, admin_id: u1)
+a1 = Animal.create!(breed: "pomerian", description: "The adage that calls dogs 'man's best friend' has some truth to it. After all, dogs are among the earliest pets that mankind had domesticated way before recorded history. In their honor and your furry life-style, below are some quotes about rescue dogs, and a dog quote collection in general.", image_url: "https://media.kidadl.com/600f84f2f7068970979d68aa-close-to-65-of-animal-abuse-cases-are-dogs.jpeg", age: "2 year", sex: "female", species: "dog", adopter_id: u5, admin_id: u1)
 
 a2 = Animal.create!(breed: "mix", description: "Taking swift action, Patiala police on Wednesday evening arrested a youngster for killing a stray dog with a gun in Patran.", image_url: "https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/r869mdwthwq5zriq_1620365874.jpeg?tr=w-1200,h-900", age: " 3 years", sex: "male", species: "dog", adopter_id: u6, admin_id: u2)
 

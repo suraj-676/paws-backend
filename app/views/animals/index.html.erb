@@ -1,9 +1,12 @@
 <span class="animal">
 <h1>Animal</h1></span>
-<ul>
+<div class="gallery">
+<ul id="grid">
   <% @animals.each do |a| %>
-    <ol>
+   
       <%= link_to cl_image_tag(a.image_url, width: 500, height: 300, crop: :fill), animal_path(a.id) %>
-    </ol>
+    
+   
   <% end %>
 </ul>
+ </div>

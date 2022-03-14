@@ -2,14 +2,8 @@
 
 one:
   user_id: 1
-  first_name: MyString
-  last_name: MyString
-  address: MyText
   amount: 1
 
 two:
   user_id: 1
-  first_name: MyString
-  last_name: MyString
-  address: MyText
   amount: 1

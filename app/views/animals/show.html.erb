@@ -1,0 +1,52 @@
+<p>
+  <strong>breed</strong>:
+  <%= @animal.breed %>
+</p>
+<p>
+  <strong>name</strong>:
+  <%= @animal.name %>
+</p>
+
+<p>
+  <strong>description</strong>
+  <%= @animal.description %>
+</p>
+
+<p>
+  <strong>age</strong>
+  <%= @animal.age %>
+</p>
+
+
+
+<p>
+  <strong>species</strong>
+  <%= @animal.species %>
+</p>
+
+<% if @animal.image_url.present? %>
+  <%= cl_image_tag @animal.image_url %>
+
+  
+
+<% end %>
+<div class="">
+<%= link_to "Edit", edit_animal_path(@animal) %>
+<br><br>
+<%= link_to "Delete", animal_path(@animal), method: "delete" %>
+
+<br>
+<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

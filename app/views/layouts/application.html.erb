@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= cloudinary_js_config %>
+
+      
+  </head>
+
+  <body>
+  <h1>Paws</h1>
+
+  
+
+  
+  <% # <%= link_to "Home", root_path %> 
+   
+   <% if @current_user.present? %>
+       <%= link_to "Logout", login_path, method: "delete" %>
+      
+<% else %>
+<%= link_to "Login", login_path %>
+        <%= link_to "Signup", new_user_path %>
+
+       
+        <% end %>
+    <%= yield %>
+  </body>
+</html>

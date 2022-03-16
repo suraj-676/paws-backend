@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :check_if_logged_in, except: [:index, :show, :home]
+  before_action :check_if_logged_in, except: [:index, :show]
 
   def new
     @animal = Animal.new
@@ -7,6 +7,7 @@ class AnimalsController < ApplicationController
 
   def index
     @animals = Animal.all
+    render json: @animals
   end
 
   def create

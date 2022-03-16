@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :animals
   resources :donations
+  get '/animals' => 'animals#index'
 
   get "/login" => "session#new"
   post "/login" => "session#create" #form submitts here

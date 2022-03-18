@@ -1,5 +1,6 @@
 class AnimalsController < ApplicationController
-  before_action :check_if_logged_in, except: [:index, :show]
+  skip_before_action :verify_authenticity_token, raise: false
+  before_action :authenticate_user
 
   def new
     @animal = Animal.new
@@ -25,14 +26,31 @@ class AnimalsController < ApplicationController
     redirect_to animals_path
   end
 
-  ``
-
   def show
+    p "user"
+    p current_user
     @animal = Animal.find params[:id]
+    render json: @animal
+  end
+
+  def update
+    @animal = Animal.find params[:id]
+    if @animal.update(animal_params)
+      render json: @animal, status: :approved
+    else
+      render json: @animal.errors, status: :pending
+    end
   end
 
   def edit
     @animal = Animal.find params[:id]
+  end
+
+  def adopt
+    @animal = Animal.find params[:id]
+    @animal.adopter_id = current_user.id
+    @animal.save
+    render json: @animal
   end
 
   def destroy

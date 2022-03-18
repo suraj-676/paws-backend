@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Knock::Authenticable
+
   def fetch_user
     # chech if the user id in the session # set and if it the id of an actual user in our users table:
 

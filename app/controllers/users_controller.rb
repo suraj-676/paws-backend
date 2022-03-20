@@ -13,22 +13,28 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render :json => @user.to_json }
   end
+end``
 
   def edit
     @user = User.find params[:id]
-    redirect_to login_path unless session[:user_id] == @current_user.id
   end
 
   def update
-    user = User.find params[:id]
-    user.update user_params
+    @user = User.find params[:id]
+    @user.update user_params
     redirect_to user_path(params[:id])
   end
 
   def destroy
-    User.destroy params[:id]
-    redirect_to users_path
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully burned.' }
+      format.json { head :no_content }
+    end
   end
 
   private

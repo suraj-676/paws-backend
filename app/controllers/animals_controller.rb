@@ -1,6 +1,6 @@
 class AnimalsController < ApplicationController
   skip_before_action :verify_authenticity_token, raise: false
-  before_action :authenticate_user
+  before_action :authenticate_user  # knock gem is checking  authentication
 
   def new
     @animal = Animal.new
@@ -33,14 +33,7 @@ class AnimalsController < ApplicationController
     render json: @animal
   end
 
-  def update
-    @animal = Animal.find params[:id]
-    if @animal.update(animal_params)
-      render json: @animal, status: :approved
-    else
-      render json: @animal.errors, status: :pending
-    end
-  end
+  
 
   def edit
     @animal = Animal.find params[:id]
@@ -49,9 +42,11 @@ class AnimalsController < ApplicationController
   def adopt
     @animal = Animal.find params[:id]
     @animal.adopter_id = current_user.id
+    @animal.status = "pending"
     @animal.save
+    p @animal
     render json: @animal
-  end
+  end # adoption
 
   def destroy
   end

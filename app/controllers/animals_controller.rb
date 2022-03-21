@@ -23,7 +23,7 @@ class AnimalsController < ApplicationController
     @animal.user_id = @current_user.id
     @animal.save
     # to do :checkvalidation and show errors on form (mixtapes controller)
-    redirect_to animals_path
+    render json: @animal
   end
 
   def show
@@ -32,8 +32,6 @@ class AnimalsController < ApplicationController
     @animal = Animal.find params[:id]
     render json: @animal
   end
-
-  
 
   def edit
     @animal = Animal.find params[:id]

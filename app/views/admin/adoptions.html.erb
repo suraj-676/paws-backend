@@ -1,0 +1,10 @@
+<h2>Pending Adoptions</h2>
+<ul>
+
+    <% @adoptions.each do |animal| %>
+    <li> <%= link_to animal.name,  %> (adopter name: <%= animal.adopter.first_name %>)</li>
+    
+       <button class="approved">Approved</button>
+
+    <% end %>
+</ul>

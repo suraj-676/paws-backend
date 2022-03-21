@@ -9,8 +9,8 @@ class SessionController < ApplicationController
       # credentials are correct
 
       session[:user_id] = user.id
-      redirect_to 
-        #back to home page
+      redirect_to admin_adoptions_path
+      #back to home page
       #rendor json: @adoption
     else
 

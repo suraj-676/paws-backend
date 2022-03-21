@@ -2,9 +2,9 @@
 <ul>
 
     <% @adoptions.each do |animal| %>
-    <li> <%= link_to animal.name,  %> (adopter name: <%= animal.adopter.first_name %>)</li>
+    <li> <%= animal.name %> (adopter name: <%= animal.adopter.first_name %>)</li>
     
-       <button class="approved">Approved</button>
+       <%= link_to "approved", animal_approve_path(animal.id) %>
 
     <% end %>
 </ul>

@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get "/admin/adoptions" => "admin#adoptions"
   get "/admin/animals" => "admin#show"
   post "/donations" => "donations#create"
-  get "/admin/approve/:id" => "admin#approve"
   get "/animals/:id" => "animals#show"
+  get "/admin/approve/:id" => "admin#approve_animal", as: "animal_approve"
+
   get "/animals" => "animals#index"
   post "/adoption/:id" => "animals#adopt"
   get "/login" => "session#new"

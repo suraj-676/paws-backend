@@ -18,6 +18,7 @@
 <%= link_to "Donation", donations_path %>
   <%= link_to "Home", root_path %> 
   <%= link_to "Logout", login_path %> 
+  <%= link_to "Adoption", admin_adoptions_path %> 
   
    <% if @current_user.present? %>
        <%= link_to "Logout", login_path, method: "delete" %>

@@ -25,15 +25,10 @@ class AdminController < ApplicationController
     p "adoptions===============================================", @adoptions
   end
 
-  def approve_user
-    user = User.find(params[:id])
-    user.approved = true
-    if user.save
-      flash[:notice] = "#{user.id} approved"
-    else
-      flash[:alert] = "#{user.id} approval failure"
-    end
-    redirect_to animals_path
+  def approve_animal
+    animal = Animal.find(params[:id]).update_column(:status, "approved")
+    flash[:notice] = "Adoption has been approved"
+    redirect_to root_path
   end
 
   def edit

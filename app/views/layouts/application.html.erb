@@ -13,13 +13,16 @@
   </head>
 
   <body>
+  
   <h1>Paws</h1>
+  <div class="home">
 <%= link_to "Animal", admin_animals_path %>
 <%= link_to "Donation", donations_path %>
   <%= link_to "Home", root_path %> 
   <%= link_to "Logout", login_path %> 
   <%= link_to "Adoption", admin_adoptions_path %> 
-  
+ 
+
    <% if @current_user.present? %>
        <%= link_to "Logout", login_path, method: "delete" %>
       
@@ -28,7 +31,7 @@
         <%= link_to "Signup", new_user_path %>
         
 
-       
+    
         <% end %>
     <%= yield %>
   </body>

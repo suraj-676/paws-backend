@@ -13,7 +13,6 @@ class AdminController < ApplicationController
 
   def show
     @animals = Animal.all
-    @user = User.find params[:id]
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @user.to_json }
